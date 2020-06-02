@@ -34,26 +34,6 @@
     </footer>
     <script type="text/javascript">
 
-    class DateDiff
-    {
-      constructor(millsec)
-      {
-        this.millsec = millsec;
-      }
-
-      static factory(src, dist)
-      {
-        return new DateDiff(
-          (src.getTime() + src.getMilliseconds() / 1000) - (dist.getTime() + dist.getMilliseconds() / 1000)
-        )
-      }
-
-      getFullYear()
-      {
-        return (new Date(this.millsec)).getFullYear();
-      }
-    }
-
     document.addEventListener('DOMContentLoaded', e => {
       document.querySelector('input[type="button"].test-button-2').addEventListener('click', e => {
         alert('Clicked テストボタン2');
