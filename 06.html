@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>html-css-javascript-example - tamakiii-sandbox</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="./04.css" />
+  </head>
+  <body>
+    <header>
+      <h1>HTML, CSS, JavaScript の例</h1>
+    </header>
+    <main>
+      <section class="content">
+        <h2>ポラーノの広場／宮沢賢治</h2>
+        <p>そのころわたくしは、モリーオ市の博物局に勤めて居りました。</p>
+        <p>十八等官でしたから役所のなかでも、ずうっと下の方でしたし俸給ほうきゅうもほんのわずかでしたが、受持ちが標本の採集や整理で生れ付き好きなことでしたから、わたくしは毎日ずいぶん愉快にはたらきました。殊にそのころ、モリーオ市では競馬場を植物園に拵こしらえ直すというので、その景色のいいまわりにアカシヤを植え込んだ広い地面が、切符売場や信号所の建物のついたまま、わたくしどもの役所の方へまわって来たものですから、わたくしはすぐ宿直という名前で月賦で買った小さな蓄音器と二十枚ばかりのレコードをもって、その番小屋にひとり住むことになりました。わたくしはそこの馬を置く場所に板で小さなしきいをつけて一疋の山羊を飼いました。毎朝その乳をしぼってつめたいパンをひたしてたべ、それから黒い革のかばんへすこしの書類や雑誌を入れ、靴もきれいにみがき、並木のポプラの影法師を大股にわたって市の役所へ出て行くのでした。</p>
+        <p>あのイーハトーヴォのすきとおった風、夏でも底に冷たさをもつ青いそら、うつくしい森で飾られたモリーオ市、郊外のぎらぎらひかる草の波。</p>
+        <p>またそのなかでいっしょになったたくさんのひとたち、ファゼーロとロザーロ、羊飼のミーロや、顔の赤いこどもたち、地主のテーモ、山猫博士のボーガント・デストゥパーゴなど、いまこの暗い巨きな石の建物のなかで考えていると、みんなむかし風のなつかしい青い幻燈のように思われます。では、わたくしはいつかの小さなみだしをつけながら、しずかにあの年のイーハトーヴォの五月から十月までを書きつけましょう。</p>
+      </section>
+      <section class="sidebar">
+        <p>sidebar</p>
+        <ul>
+          <li><a href="https://www.google.com/" target="_blank">Google</a></li>
+          <li><a href="https://www.yahoo.co.jp/" data-append-parameter>Yahoo</a></li>
+          <li><a href="https://search.yahoo.co.jp/search" data-append-parameter>Yahoo search</a></li>
+        </ul>
+        <input type="button" value="テストボタン1" onclick="alert('Clicked テストボタン1')" />
+        <input type="button" value="テストボタン2" class="test-button-2" />
+        <p>東京オリンピックまであと</p>
+        <p class="test-time">test time</p>
+      </section>
+    </main>
+    <footer>
+      &copy; 2020
+    </footer>
+
+    <script type="text/javascript">
+
+    document.addEventListener('DOMContentLoaded', e => {
+      document.querySelector('input[type="button"].test-button-2').addEventListener('click', e => {
+        alert('Clicked テストボタン2');
+      });
+      document.querySelectorAll('a[data-append-parameter]').forEach(a => a.addEventListener('click', e => {
+        e.preventDefault();
+        location.href = e.currentTarget.href + '?p=Tokyo+Olympics';
+      }));
+    });
+
+    document.addEventListener('DOMContentLoaded', e => {
+      window.setInterval(
+        () => {
+          const date = new Date((new Date('2020-07-22 00:00:00')) - (new Date));
+          const years = 1970 - date.getFullYear();
+          const months = date.getMonth()
+          const days = date.getDate()
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          const seconds = date.getSeconds();
+          const millsec = date.getMilliseconds();
+          document.querySelector('p.test-time').textContent = `${years}年 ${months}ヶ月 ${days}日 ${hours}時間 ${minutes}分 ${seconds}.${millsec}秒`;
+        },
+        1
+      );
+    });
+
+    </script>
+</html>
