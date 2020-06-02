@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+* {
+  font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+
+body {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+header {
+  background-color: #ff0000;
+}
+
+main {
+  background-color: #00ff00;
+}
+
+footer {
+  background-color: #0000ff;
+}
+
+main {
+  margin: 0 auto;
+  width: 80%;
+  text-align: left;
+  display: grid;
+  grid-row: 1;
+  grid-template-columns: 2fr minmax(180px, 1fr);
+}
+
+main>section.content {
+  background-color: #aaff00;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+main>section.sidebar {
+  background-color: #00ffaa;
+  grid-column: 2;
+  grid-row: 1;
+}
